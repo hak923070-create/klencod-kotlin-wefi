@@ -2,6 +2,7 @@ package com.student.wifitool
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -10,13 +11,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         
-        // إنشاء واجهة المستخدم برمجياً بشكل مباشر وسهل
-        val layout = android.widget.LinearLayout(this).apply {
-            orientation = android.widget.LinearLayout.VERTICAL
+        val layout = LinearLayout(this).apply {
+            orientation = LinearLayout.VERTICAL
             setPadding(50, 50, 50, 50)
         }
 
-        // عنوان التطبيق
         val titleTextView = TextView(this).apply {
             text = "أداة فحص الواي فاي الأخلاقية"
             textSize = 20f
@@ -24,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         }
         layout.addView(titleTextView)
 
-        // زر الفحص
         val scanButton = Button(this).apply {
             text = "بدء فحص الشبكات"
             setOnClickListener {
@@ -33,7 +31,6 @@ class MainActivity : AppCompatActivity() {
         }
         layout.addView(scanButton)
 
-        // عرض الواجهة على الشاشة
         setContentView(layout)
     }
 }
